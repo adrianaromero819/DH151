@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Cities of My Siblings and Our Parents </title>
+	<meta charset="utf-8" />
+
+	<!-- style sheets -->
+	<link rel="stylesheet" href="css/style.css">
+
+    <!-- leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+
+</head>
+<body>
+
+	<div class="header">
+		<h1>The Cities of Adriana's Siblings and Their Parents</h1>
+	</div>
+	<div class="sidebar">
+		<p>I have four siblings: Carlos, Alex, Anastasia, and Fyodor. Three of my siblings are my "half" siblings. I have unique, close bond with all of my siblings and I enjoy learning about the half of my siblings culture that I do not share. This map displays the different locations across the world that we are each connected to through our parents. 
+			<br></br>
+			The locations included are:
+			<ul>
+				<li>Los Angeles (United States)</li>
+				<li>Mexico City (Mexico)</li>
+				<li>Santa Ana (El Salvador)</li>
+				<li>El Triunfo de La Cruz (Honduras)</li>
+				<li>Volgograd (Russia)</li>
+			  </ul> 
+		 </p>
+	</div>
+	<div class="content">
+        <div id="map"></div>
+	</div>
+
+<script>
+
+	let cities = ['Mexico City','San Salvador','El Triunfo de La Cruz','Los Angeles']
+
+	let data = [
+		{
+			'title':'Mexico City',
+			'description': 'My father, Jose Carlos, is from Mexico City, Mexico. He is the father of Adriana, Alex, Anastasia, and Fyodor.',
+			'lat': 19.4326,
+			'lon': -99.1332
+	
+
+		},
+
+		{
+			'title':'Santa Ana',
+			'description': 'My mother, Maria, is from Sannta Ana, El Salvador. She is the mother of Carlos, Adriana, and Alex.',
+			'lat': 13.9778,
+			'lon': -89.5639
+		},
+		{
+			'title':'El Triunfo de La Cruz',
+			'description': 'The ancestors of my brother Carlos are from El Trinunfo de La Cruz, Honduras.',
+			'lat': 15.8108,
+			'lon': -87.4133
+		},
+		{
+			'title':'Volgograd',
+			'description': 'The mother of my siblings Anastasia and Fyodor is from Volgograd, Russia.',
+			'lat': 48.7080,
+			'lon': 44.5133
+		},
+		{
+			'title':'Los Angeles',
+			'description': 'Carlos, Alex, Anastasia, Fyodor and I were all born and raised in the city of Los Angeles.', 
+			'lat': 34.0522,
+			'lon': -118.2437
+		}
+		]
+		
+		var map = L.map('map').setView([0,0], 2);
+
+			L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+				attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+			}).addTo(map);
+
+		// loop through cities
+			data.forEach(function(item){
+				L.marker([item.lat,item.lon]).addTo(map).bindPopup('<h3>'+item.title+'</h3>' +'<p>' + item.description + '</p').openPopup();
+			});
+
+
+
+    </script>
+
+</body>
+</html>
