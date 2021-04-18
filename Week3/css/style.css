@@ -1,0 +1,68 @@
+body,html {
+	margin:0;
+	height:100%;
+	width:100%;
+	color: white
+}
+
+#map {
+	height: 100%;
+
+
+}
+
+body {
+	display: grid;
+	grid-template-rows: 75x 1fr;
+	grid-template-columns: 240px 1fr;
+	grid-template-areas: 
+	"header header"
+	"sidebar content";
+	font-family: "Times New Roman", Times, serif;
+
+	
+}
+
+.header {
+	grid-area: header;
+	padding:10px;
+	background-color: rgb(123, 194, 114);
+	color: rgb(250, 250, 250);
+	font-size: 0.9em;
+	text-align: center;
+	
+	
+
+}
+
+.sidebar {
+	grid-area: sidebar;
+	padding:10px;
+	background-color: rgba(124, 164, 223, 0.945);
+	cursor: pointer;
+}
+
+.sidebar-item:hover {
+	color: rgb(81, 151, 72);
+
+}
+
+.content {
+	grid-area: content;  
+	 
+
+}
+
+.sidebar-item {
+	padding: 10px; 
+	background: rgb(123, 194, 114);
+	border: 1px solid rgb(160, 169, 221);
+	margin: 5px;
+	
+	
+
+}
+
+
+
+
