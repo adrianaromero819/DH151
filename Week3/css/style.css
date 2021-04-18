@@ -13,7 +13,7 @@ body,html {
 
 body {
 	display: grid;
-	grid-template-rows: 75x 1fr;
+	grid-template-rows: 50x 1fr;
 	grid-template-columns: 240px 1fr;
 	grid-template-areas: 
 	"header header"
