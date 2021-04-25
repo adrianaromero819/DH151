@@ -2,7 +2,7 @@
 let map;
 let lat = 0;
 let long = 0;
-let zl = 3;
+let zl = 2;
 let path = "data/1900s.csv";
 let markers = L.featureGroup();
 
