@@ -40,7 +40,7 @@ function readCSV(path){
 function mapCSV(data){
 
     let circleOptions = {
-        radius: 8,
+        radius: 7,
         weight: 1,
         color: 'white',
         fillColor: 'brown',
